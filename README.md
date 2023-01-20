@@ -30,6 +30,7 @@
 ## Member
 
 - Frontend
-  - Subong Park (reality023@naver.com)
+  - Subong Park (https://github.com/reality023)
 - Backend
-  - more
+  - Gunyeong Park (https://github.com/0AndWild)
+  - Seungchan Kim (https://github.com/SeungchanKKK)
