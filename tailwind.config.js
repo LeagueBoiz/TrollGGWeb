@@ -1,8 +1,8 @@
-const pxrem0to10 = { ...Array.from(Array(11)).map((_, i) => `${i * 0.0625}rem`) };
-const pxrem0to100 = { ...Array.from(Array(101)).map((_, i) => `${i * 0.0625}rem`) };
-const pxrem0to200 = { ...Array.from(Array(201)).map((_, i) => `${i * 0.0625}rem`) };
-const pxrem0to1000 = { ...Array.from(Array(1001)).map((_, i) => `${i * 0.0625}rem`) };
-const pxrem0to2000 = { ...Array.from(Array(2001)).map((_, i) => `${i * 0.0625}rem`) };
+const px0to10 = { ...Array.from(Array(11)).map((_, i) => `${i}px`) };
+const px0to100 = { ...Array.from(Array(101)).map((_, i) => `${i}px`) };
+const px0to200 = { ...Array.from(Array(201)).map((_, i) => `${i}px`) };
+const px0to1000 = { ...Array.from(Array(1001)).map((_, i) => `${i}px`) };
+const px0to2000 = { ...Array.from(Array(2001)).map((_, i) => `${i}px`) };
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -10,19 +10,19 @@ module.exports = {
   content: [],
   theme: {
     extend: {
-      borderWidth: pxrem0to10,
-      fontSize: pxrem0to100,
-      lineHeight: pxrem0to100,
-      minWidth: pxrem0to200,
-      minHeight: pxrem0to200,
-      spacing: pxrem0to200,
-      width: pxrem0to2000,
-      height: pxrem0to2000,
-      left: pxrem0to1000,
-      right: pxrem0to1000,
-      top: pxrem0to1000,
-      bottom: pxrem0to1000,
-      borderRadius: pxrem0to100,
+      borderWidth: px0to10,
+      fontSize: px0to100,
+      lineHeight: px0to100,
+      minWidth: px0to200,
+      minHeight: px0to200,
+      spacing: px0to200,
+      width: px0to2000,
+      height: px0to2000,
+      left: px0to1000,
+      right: px0to1000,
+      top: px0to1000,
+      bottom: px0to1000,
+      borderRadius: px0to100,
     },
     colors: {
       transparent: 'transparent',
