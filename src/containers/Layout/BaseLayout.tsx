@@ -1,52 +1,69 @@
-import React from 'react';
+'use client';
+
+import React, { useEffect, useState } from 'react';
 import tw, { css, styled } from 'twin.macro';
 import { FaHome, FaUser, FaClipboardList } from 'react-icons/fa';
+import Link from 'next/link';
+import { useSelector } from 'react-redux';
+import { RootState } from '@/redux/store';
 
 interface BaseLayoutProps {
   children: React.ReactNode;
-  bgColor?: 'black' | 'white';
 }
 
-const BaseLayout: React.FC<BaseLayoutProps> = ({ children, bgColor = 'white' }) => {
+const BaseLayout: React.FC<BaseLayoutProps> = ({ children }) => {
+  const [isLoaded, setLoaded] = useState(false);
+  const selectedMenu = useSelector<RootState, number>((state) => state.common.selectedMenu);
+
+  useEffect(() => {
+    setLoaded(true);
+  }, []);
+
   return (
-    <Wrapper bgColor={bgColor}>
-      {children}
-      <BottomNavigation activeMenuNumber={1}>
-        <Item>
-          <FaClipboardList />
-        </Item>
-        <Line />
-        <Item>
-          <FaHome />
-        </Item>
-        <Line />
-        <Item>
-          <FaUser />
-        </Item>
-      </BottomNavigation>
+    <Wrapper>
+      {isLoaded && (
+        <>
+          {children}
+          <BottomNavigation activeMenuNumber={selectedMenu}>
+            <Item>
+              <Link href="/board">
+                <FaClipboardList />
+              </Link>
+            </Item>
+            <Line />
+            <Item>
+              <Link href="/">
+                <FaHome />
+              </Link>
+            </Item>
+            <Line />
+            <Item>
+              <Link href="/profile">
+                <FaUser />
+              </Link>
+            </Item>
+          </BottomNavigation>
+        </>
+      )}
     </Wrapper>
   );
 };
 
 export default BaseLayout;
 
-const Wrapper = styled.div<{
-  bgColor: 'black' | 'white';
-}>`
+const Wrapper = styled.div`
   ${tw`flex flex-col items-center justify-center w-full h-full pb-[80px]`};
-
-  ${({ bgColor }) => (bgColor === 'black' ? tw`bg-grey-100` : tw`bg-white`)};
 `;
 
 const BottomNavigation = styled.div<{
-  activeMenuNumber: 0 | 1 | 2;
+  activeMenuNumber: number;
 }>`
   ${tw`fixed bottom-0 flex items-center justify-evenly w-full bg-white h-80 text-[3rem] text-grey-500`};
 
   ${({ activeMenuNumber }) => {
     return css`
       .item:nth-of-type(${activeMenuNumber * 2 + 1}) {
-        ${tw`text-[#3E7B8E] text-[4rem]`}
+        ${tw`text-[#3E7B8E]`}
       }
     `;
   }};
