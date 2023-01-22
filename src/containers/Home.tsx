@@ -52,7 +52,7 @@ const Logo = styled.div.attrs({
     ${tw`text-[#3E7B8E]`}
   }
 `;
-const SearchBar = tw.div`w-[25rem] h-[3.6rem] bg-white rounded-[1.8rem] mt-[2rem] relative flex items-center`;
-const SearchInput = tw.input`w-full h-full rounded-[1.8rem] outline-none px-[1.2rem]`;
-const SearchIcon = tw(FaSearch)`text-[#3E7B8E] text-[1.8rem] absolute right-0 mr-[1rem]`;
-const OtherContent = tw.div`w-[25rem] mx-auto text-white mt-[1.6rem] text-center underline`;
+
+const SearchBar = tw.div`w-[25rem] h-[3.6rem] rounded-[1.8rem] mt-[2rem] relative flex items-center`;
+const SearchInput = tw.input`bg-[#dddddd] w-full h-full rounded-[1.8rem] outline-none px-[1.2rem] focus:bg-[#ffffff] transition-colors duration-300 px-[1.8rem]`;
+const SearchIcon = tw(FaSearch)`text-[#3E7B8E] text-[1.8rem] absolute right-0 mr-[1rem] cursor-pointer`;

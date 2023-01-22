@@ -70,3 +70,10 @@ body {
 .font-gmarket {
   font-family: 'GmarketSans', sans-serif;
 }
+
+input,
+button,
+textarea,
+select {
+  font-family: 'Pretendard', sans-serif;
+}
