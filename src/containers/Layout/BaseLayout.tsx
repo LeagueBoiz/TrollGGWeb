@@ -51,14 +51,20 @@ const BaseLayout: React.FC<BaseLayoutProps> = ({ children }) => {
 
 export default BaseLayout;
 
-const Wrapper = styled.div`
-  ${tw`flex flex-col items-center justify-center w-full h-full pb-[80px]`};
-`;
+const Wrapper = tw.div`flex flex-col items-center justify-center w-full h-full pb-[80px]`;
 
 const BottomNavigation = styled.div<{
   activeMenuNumber: number;
 }>`
   ${tw`fixed bottom-0 flex items-center justify-evenly w-full bg-white h-80 text-[3rem] text-grey-500`};
+
+  .item {
+    ${tw`cursor-pointer w-[33.33%] h-full flex items-center justify-center`};
+  }
+
+  .item:nth-of-type(3) {
+    ${tw`text-[3.6rem]`};
+  }
 
   ${({ activeMenuNumber }) => {
     return css`
