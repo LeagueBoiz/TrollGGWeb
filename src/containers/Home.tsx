@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useLayoutEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import tw, { styled } from 'twin.macro';
@@ -10,41 +10,34 @@ import BaseLayout from './Layout/BaseLayout';
 import { FaSearch } from 'react-icons/fa';
 
 import iconTroll from '@/assets/svg/icons/icon_troll.svg';
-import BottomNavigation from '@/components/mobile/BottomNavigation';
+import { useDispatch } from 'react-redux';
+import { setSelectedMenu } from '@/redux/slice/commonSlice';
 
 const Home = () => {
   const router = useRouter();
-  const [isLoad, setLoad] = useState(false);
+  const dispatch = useDispatch();
 
-  useEffect(() => {
-    // setTimeout(() => {
-    //   router.push('/home');
-    // }, 500);
-  }, [router]);
-
-  useEffect(() => {
-    setLoad(true);
-  }, []);
+  useLayoutEffect(() => {
+    dispatch(setSelectedMenu(1));
+  }, [dispatch]);
 
   return (
-    <BaseLayout bgColor="black">
-      {isLoad && (
-        <>
-          <Image src={iconTroll} alt="troll" />
-          <Logo>
-            <span>Troll</span>.<span>GG</span>
-          </Logo>
-          <SearchBar>
-            <SearchInput />
-            <SearchIcon />
-          </SearchBar>
-        </>
-      )}
-    </BaseLayout>
+    <Wrapper>
+      <Image src={iconTroll} alt="troll" />
+      <Logo>
+        <span>Troll</span>.<span>GG</span>
+      </Logo>
+      <SearchBar>
+        <SearchInput />
+        <SearchIcon />
+      </SearchBar>
+    </Wrapper>
   );
 };
 
 export default Home;
+
+const Wrapper = tw.div`w-full h-full bg-grey-100 flex flex-col justify-center items-center`;
 
 const Logo = styled.div.attrs({
   className: 'font-gmarket',
