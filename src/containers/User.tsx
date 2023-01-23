@@ -24,10 +24,15 @@ const User = () => {
             <span className="silver">S21 Silver 2</span>
           </LastTier>
           <TierText>UNRANKED</TierText>
+          <UserName>You Gosu</UserName>
           <div>0LP</div>
           <div>승률 0% (0승 0패)</div>
         </StatBox>
       </CoreInfo>
+      <Spec>
+        <Title>STATUS</Title>
+        <Box></Box>
+      </Spec>
     </Wrapper>
   );
 };
@@ -43,7 +48,7 @@ const TopView = tw.div`w-full h-[4rem] flex items-center justify-center mb-10`;
 const Item = styled.div<{
   isActive?: boolean;
 }>`
-  ${tw`p-5 px-10 mx-5 cursor-pointer rounded-5 text-[#666666] border-1 border-grey-700 box-border`};
+  ${tw`p-5 px-15 mx-5 cursor-pointer rounded-5 text-[#666666] border-1 border-grey-700 box-border`};
 
   ${({ isActive }) => isActive && tw`bg-[#E75757] text-white border-0`}
 `;
@@ -87,23 +92,24 @@ const LastTier = styled.div`
   }
 
   .diamond {
-    ${tw`text-[#8B8BB6]`};
+    ${tw`text-[#67a1c6]`};
   }
 
   .master {
-    ${tw`text-[#B68B8B]`};
+    ${tw`text-[#b38bb6]`};
   }
 
   .grandmaster {
-    ${tw`text-[#B68B8B]`};
+    ${tw`text-[#7936ac]`};
   }
 
   .challenger {
-    ${tw`text-[#B68B8B]`};
+    ${tw`text-[#2d35cf]`};
   }
 `;
 
-const TierText = styled.div`
-  ${tw`font-[700] text-[2.4rem]`};
-  font-family: 'GmarketSans';
-`;
+const TierText = tw.div`font-gmarketSans`;
+const UserName = tw.div`font-[700] text-[2.4rem] font-gmarketSans`;
+const Spec = styled.div``;
+const Title = tw.div`font-gmarketSans my-20 mb-10 text-24`;
+const Box = tw.div`border-1 border-grey-300 h-[20rem]`;

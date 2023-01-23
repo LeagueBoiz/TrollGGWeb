@@ -1,11 +1,9 @@
 'use client';
 
-import { useEffect, useLayoutEffect, useState } from 'react';
+import { useLayoutEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import tw, { styled } from 'twin.macro';
-
-import BaseLayout from './Layout/BaseLayout';
 
 import { FaSearch } from 'react-icons/fa';
 
