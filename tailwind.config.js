@@ -9,6 +9,10 @@ module.exports = {
   purge: ['./src/**/*.{js,ts,jsx,tsx}'],
   content: [],
   theme: {
+    fontFamily: {
+      base: ['Pretendard', 'sans-serif'],
+      gmarketSans: ['GmarketSans', 'sans-serif'],
+    },
     extend: {
       borderWidth: px0to10,
       fontSize: px0to100,
