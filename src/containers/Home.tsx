@@ -41,12 +41,12 @@ const Home = () => {
 
 export default Home;
 
-const Wrapper = tw.div`w-full h-full bg-grey-100 flex flex-col justify-center items-center`;
+const Wrapper = tw.div`w-full h-full flex flex-col justify-center items-center`;
 
 const Logo = styled.div.attrs({
   className: 'font-gmarket',
 })`
-  ${tw`text-white text-[3.6rem] mt-[1rem]`};
+  ${tw`text-black text-[3.6rem] mt-[1rem]`};
 
   span:nth-of-type(1) {
     ${tw`text-[#E75757]`};
@@ -58,5 +58,17 @@ const Logo = styled.div.attrs({
 `;
 
 const SearchBar = tw.div`w-[25rem] h-[3.6rem] rounded-[1.8rem] mt-[2rem] relative flex items-center`;
-const SearchInput = tw.input`bg-[#dddddd] w-full h-full rounded-[1.8rem] outline-none px-[1.2rem] focus:bg-[#ffffff] transition-colors duration-300 px-[1.8rem]`;
-const SearchIcon = tw(FaSearch)`text-[#3E7B8E] text-[1.8rem] absolute right-0 mr-[1rem] cursor-pointer`;
+
+const SearchIcon = tw(
+  FaSearch,
+)`text-[#d5d5d5] text-[1.8rem] absolute right-5 mr-[1rem] cursor-pointer transition-colors duration-300`;
+const SearchInput = styled.input`
+  ${tw`
+    bg-[#f5f5f5] w-full h-full rounded-[1.8rem] outline-none px-[1.2rem] transition-colors duration-300 px-[1.8rem] border-[#ffffff]
+    focus:bg-[#ffffff] focus:border-1 focus:border-[#dddddd]
+  `}
+
+  &:focus + svg {
+    ${tw`text-[#3e7b8e]`}
+  }
+`;

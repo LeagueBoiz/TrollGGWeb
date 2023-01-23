@@ -57,6 +57,7 @@ const BottomNavigation = styled.div<{
   activeMenuNumber: number;
 }>`
   ${tw`fixed bottom-0 flex items-center justify-evenly w-full bg-white h-80 text-[3rem] text-grey-500`};
+  box-shadow: 0px -1px 5px rgba(0, 0, 0, 0.1);
 
   .item {
     ${tw`cursor-pointer w-[33.33%] h-full flex items-center justify-center`};
