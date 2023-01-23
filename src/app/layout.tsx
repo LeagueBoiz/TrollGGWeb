@@ -6,9 +6,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="ko">
       <head />
       <body>
-        <RootComponent>
-          <BaseLayout>{children}</BaseLayout>
-        </RootComponent>
+        <RootComponent>{children}</RootComponent>
       </body>
     </html>
   );

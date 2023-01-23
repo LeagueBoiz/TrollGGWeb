@@ -29,7 +29,11 @@ const Home = () => {
       </Logo>
       <SearchBar>
         <SearchInput />
-        <SearchIcon />
+        <SearchIcon
+          onClick={() => {
+            router.push('/user');
+          }}
+        />
       </SearchBar>
     </Wrapper>
   );

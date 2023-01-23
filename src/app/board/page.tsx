@@ -1,7 +1,12 @@
 import Board from '@/containers/Board';
+import BaseLayout from '@/containers/Layout/BaseLayout';
 
 const BoardServer = () => {
-  return <Board />;
+  return (
+    <BaseLayout>
+      <Board />
+    </BaseLayout>
+  );
 };
 
 export default BoardServer;
