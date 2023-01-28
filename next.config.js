@@ -10,8 +10,7 @@ const nextConfig = {
     return config;
   },
   images: {
-    loader: 'imgix',
-    path: '/',
+    unoptimized: true,
   },
 };
 
