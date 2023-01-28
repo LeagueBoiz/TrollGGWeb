@@ -8,7 +8,7 @@ import { useSelector } from 'react-redux';
 import { RootState } from '@/redux/store';
 
 interface BaseLayoutProps {
-  children: React.ReactNode;
+  children?: React.ReactNode;
 }
 
 const BaseLayout: React.FC<BaseLayoutProps> = ({ children }) => {
