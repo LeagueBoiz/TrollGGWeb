@@ -1,45 +1,47 @@
 {
-	"name": "troll.gg",
-	"version": "0.1.0",
-	"private": true,
-	"scripts": {
-		"dev": "next dev",
-		"build": "next build && next export",
-		"start": "next start",
-		"lint": "next lint"
-	},
-	"dependencies": {
-		"@next/font": "13.1.3",
-		"@reduxjs/toolkit": "^1.9.1",
-		"@types/react-icons": "^3.0.0",
-		"@types/react-loader-spinner": "^4.0.0",
-		"autoprefixer": "^10.4.13",
-		"next": "13.1.3",
-		"postcss": "^8.4.21",
-		"react": "18.2.0",
-		"react-dom": "18.2.0",
-		"react-icons": "^4.7.1",
-		"react-loader-spinner": "^5.3.4",
-		"react-query": "^3.39.2",
-		"react-redux": "^8.0.5",
-		"styled-components": "^5.3.6",
-		"tailwindcss": "^3.2.4",
-		"twin.macro": "^3.0.0-rc.5"
-	},
-	"devDependencies": {
-		"@types/node": "18.11.18",
-		"@types/react": "18.0.27",
-		"@types/react-dom": "18.0.10",
-		"@types/styled-components": "^5.1.26",
-		"babel-plugin-macros": "^3.1.0",
-		"babel-plugin-styled-components": "^2.0.7",
-		"eslint": "8.32.0",
-		"eslint-config-next": "13.1.3",
-		"typescript": "4.9.4"
-	},
-	"babelMacros": {
-		"twin": {
-			"preset": "styled-components"
-		}
-	}
+  "name": "troll.gg",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build && next export",
+    "start": "next start",
+    "lint": "next lint",
+    "deploy": "aws s3 sync ./out s3://troll-gg --profile=reality023",
+    "invalidate": "aws cloudfront create-invalidation --profile=reality023 --distribution-id E39YT039X6B7NW --paths /*"
+  },
+  "dependencies": {
+    "@next/font": "13.1.3",
+    "@reduxjs/toolkit": "^1.9.1",
+    "@types/react-icons": "^3.0.0",
+    "@types/react-loader-spinner": "^4.0.0",
+    "autoprefixer": "^10.4.13",
+    "next": "13.1.3",
+    "postcss": "^8.4.21",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-icons": "^4.7.1",
+    "react-loader-spinner": "^5.3.4",
+    "react-query": "^3.39.2",
+    "react-redux": "^8.0.5",
+    "styled-components": "^5.3.6",
+    "tailwindcss": "^3.2.4",
+    "twin.macro": "^3.0.0-rc.5"
+  },
+  "devDependencies": {
+    "@types/node": "18.11.18",
+    "@types/react": "18.0.27",
+    "@types/react-dom": "18.0.10",
+    "@types/styled-components": "^5.1.26",
+    "babel-plugin-macros": "^3.1.0",
+    "babel-plugin-styled-components": "^2.0.7",
+    "eslint": "8.32.0",
+    "eslint-config-next": "13.1.3",
+    "typescript": "4.9.4"
+  },
+  "babelMacros": {
+    "twin": {
+      "preset": "styled-components"
+    }
+  }
 }

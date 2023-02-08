@@ -1,4 +1,4 @@
-import StackLayout from '@/containers/Layout/StackLayout';
+import BaseLayout from '@/containers/Layout/BaseLayout';
 import User from '@/containers/User';
 import Head from 'next/head';
 
@@ -11,14 +11,13 @@ const UserPage = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <StackLayout
-        useHeader={true}
+      <BaseLayout
         headerOptions={{
-          title: 'You Gosu',
+          isShow: true,
         }}
       >
         <User />
-      </StackLayout>
+      </BaseLayout>
     </>
   );
 };
